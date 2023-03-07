@@ -1,0 +1,11 @@
+{
+  "label.app": "Sigma Web",
+  "label.department": "Department",
+  "label.city": "City",
+  "label.name": "Name",
+  "label.email": "Email",
+  "label.email_not_valid": "The email is not valid",
+  "label.success": "Your information has been successfully received",
+  "label.required": "Required",
+  "label.maximum_limit": "You went too far, there must be a maximum of 50 characters."
+}

@@ -9,7 +9,7 @@ import { RoutesRoutingModule } from './routes-routing.module';
   imports: [
     CommonModule,
     RoutesRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
   ],
   exports: [
     NgOptimizedImage

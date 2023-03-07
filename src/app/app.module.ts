@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -8,9 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TranslatePipe } from './core/pipes/translate.pipe';
+import { TranslateService } from './core/services/translate.service';
+
+// Fx para traducir los textos de los componentes
+export function translateFactory(provider: TranslateService){
+ return () => provider.getData();
+}
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -20,9 +28,18 @@ import { AppComponent } from './app.component';
     MatButtonModule,
     MatInputModule,
     HttpClientModule
-
   ],
-  providers: [],
+  exports: [
+    TranslatePipe
+  ],
+  providers: [// Provider para traducir los textos de los componentes
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: translateFactory,
+      deps: [TranslateService],
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

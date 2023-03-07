@@ -1,0 +1,9 @@
+{
+  "label.app": "Sigma Web",
+  "label.department": "Departamento",
+  "label.city": "Ciudad",
+  "label.name": "Nombre",
+  "label.email": "Correo",
+  "label.success": "Exito",
+  "label.required": "Requerido"
+}

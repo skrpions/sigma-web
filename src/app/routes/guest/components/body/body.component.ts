@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Department } from '../../../../core/models/department';
 import { DepartmentService } from '../../../../core/services/department.service';
+import { TranslateService } from '../../../../core/services/translate.service';
 import { Guest } from './../../../../core/models/guest';
+
 
 @Component({
   selector: 'app-body',
@@ -19,7 +21,8 @@ export class BodyComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private _departmentSvc: DepartmentService
+    private _departmentSvc: DepartmentService,
+    private translate: TranslateService
   ) {
     this.buildForm();
   }

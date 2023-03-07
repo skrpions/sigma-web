@@ -8,17 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TranslatePipe } from './core/pipes/translate.pipe';
 import { TranslateService } from './core/services/translate.service';
+import { translateFactory } from './routes/guest/guest.module';
 
-// Fx para traducir los textos de los componentes
-export function translateFactory(provider: TranslateService){
- return () => provider.getData();
-}
+
 @NgModule({
   declarations: [
     AppComponent,
-    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -28,9 +24,6 @@ export function translateFactory(provider: TranslateService){
     MatButtonModule,
     MatInputModule,
     HttpClientModule
-  ],
-  exports: [
-    TranslatePipe
   ],
   providers: [// Provider para traducir los textos de los componentes
     TranslateService,

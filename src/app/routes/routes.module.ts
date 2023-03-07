@@ -12,7 +12,6 @@ import { RoutesRoutingModule } from './routes-routing.module';
     NgOptimizedImage,
   ],
   exports: [
-    NgOptimizedImage
   ]
 })
 export class RoutesModule { }

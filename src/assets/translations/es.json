@@ -4,6 +4,8 @@
   "label.city": "Ciudad",
   "label.name": "Nombre",
   "label.email": "Correo",
-  "label.success": "Exito",
-  "label.required": "Requerido"
+  "label.email_not_valid": "El correo no es válido",
+  "label.success": "Tu información ha sido recibida satisfactoriamente",
+  "label.required": "Requerido",
+  "label.maximum_limit": "Te pasaste, máximo deben haber 50 caracteres."
 }

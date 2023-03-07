@@ -2,14 +2,14 @@
 
   <!-- department -->
   <div class="mb-3">
-    <label for="department" class="form-label"><strong>Departamento*</strong></label>
+    <label for="department" class="form-label"><strong>{{'label.department' | translate}}*</strong></label>
     <select formControlName="department" class="form-select" (change)="changeDepartment($event)">
-      <option selected>Departamento*</option>
+      <!-- <option selected>Departamento*</option> -->
       <option *ngFor="let department of departments">{{department.Department}}</option>
     </select>
     <div *ngIf="departmentField?.errors && departmentField?.touched">
       <p *ngIf="departmentField?.hasError('required')">
-        Selección Requerida *
+        {{'label.required' | translate}} *
       </p>
     </div>
   </div>
@@ -17,14 +17,14 @@
 
   <!-- city -->
   <div class="mb-3">
-    <label for="city" class="form-label">Ciudad*</label>
+    <label for="city" class="form-label">{{'label.city' | translate}}*</label>
     <select formControlName="city" class="form-select" id="city">
       <option selected>Seleccione Ciudad</option>
       <option *ngFor="let city of cities">{{city}}</option>
     </select>
     <div *ngIf="cityField?.errors && cityField?.touched">
       <p *ngIf="cityField?.hasError('required')">
-        Selección Requerida *
+        {{'label.required' | translate}} *
       </p>
     </div>
   </div>
@@ -37,10 +37,10 @@
     <span class="icon-left"><i class="fas fa-check-circle"></i></span>
     <span class="msj" *ngIf="nameField?.errors && nameField?.touched">
       <p *ngIf="nameField?.hasError('required')">
-        Campo Requerido *
+        {{'label.required' | translate}} *
       </p>
       <p *ngIf="nameField?.hasError('maxlength')">
-        Te pasaste, máximo deben haber 50 caracteres.
+        {{'label.maximum_limit' | translate}}
       </p>
     </span>
   </div>
@@ -48,14 +48,14 @@
 
   <!-- E-mail -->
   <div class="mb-3">
-    <label for="email" class="form-label">Correo*</label>
+    <label for="email" class="form-label">{{'label.email' | translate}}*</label>
     <input formControlName="email" type="email" class="form-control" id="email" placeholder="Pepitodejesus@gmail.com">
     <span *ngIf="emailField?.errors && emailField?.touched">
       <p *ngIf="emailField?.hasError('required')">
-        Campo Requerido *
+        {{'label.required' | translate}} *
       </p>
       <p *ngIf="emailField?.hasError('email')">
-        Este correo no es válido *
+        {{'label.email_not_valid' | translate}} *
       </p>
     </span>
   </div>

@@ -1,0 +1,67 @@
+<form [formGroup]="formGuest" (ngSubmit)="send()" class="shadow form" novalidate>
+
+  <!-- department -->
+  <div class="mb-3">
+    <label for="department" class="form-label"><strong>Departamento*</strong></label>
+    <select formControlName="department" class="form-select" (change)="changeDepartment($event)">
+      <option selected>Departamento*</option>
+      <option *ngFor="let department of departments">{{department.Department}}</option>
+    </select>
+    <div *ngIf="departmentField?.errors && departmentField?.touched">
+      <p *ngIf="departmentField?.hasError('required')">
+        Selección Requerida *
+      </p>
+    </div>
+  </div>
+
+
+  <!-- city -->
+  <div class="mb-3">
+    <label for="city" class="form-label">Ciudad*</label>
+    <select formControlName="city" class="form-select" id="city">
+      <option selected>Seleccione Ciudad</option>
+      <option *ngFor="let city of cities">{{city}}</option>
+    </select>
+    <div *ngIf="cityField?.errors && cityField?.touched">
+      <p *ngIf="cityField?.hasError('required')">
+        Selección Requerida *
+      </p>
+    </div>
+  </div>
+
+  <!-- Name -->
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre*</label>
+    <input formControlName="name" type="text" class="form-control" id="name" placeholder="Pepito de Jesús">
+    <!-- {{nameField.value.length}}/50 -->
+    <span class="icon-left"><i class="fas fa-check-circle"></i></span>
+    <span class="msj" *ngIf="nameField?.errors && nameField?.touched">
+      <p *ngIf="nameField?.hasError('required')">
+        Campo Requerido *
+      </p>
+      <p *ngIf="nameField?.hasError('maxlength')">
+        Te pasaste, máximo deben haber 50 caracteres.
+      </p>
+    </span>
+  </div>
+
+
+  <!-- E-mail -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo*</label>
+    <input formControlName="email" type="email" class="form-control" id="email" placeholder="Pepitodejesus@gmail.com">
+    <span *ngIf="emailField?.errors && emailField?.touched">
+      <p *ngIf="emailField?.hasError('required')">
+        Campo Requerido *
+      </p>
+      <p *ngIf="emailField?.hasError('email')">
+        Este correo no es válido *
+      </p>
+    </span>
+  </div>
+
+  <!-- Enviar -->
+  <div class="text-center">
+    <button type="submit" name="enviar" class="btn">Enviar</button>
+  </div>
+</form>

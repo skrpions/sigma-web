@@ -1,0 +1,30 @@
+body, html
+  height: 100%
+  padding: 0
+  margin: 0
+
+body
+  background-color: #fff
+  background-size: cover
+  background-position: center
+  color: rgb(0, 0, 0)
+
+.img-formulario
+  height: 420px
+  width: 450px
+  text-align: right
+  float: right
+  margin: 1em 0 1em 1em
+
+// Estilos específicos para pantallas a partir de 375px
+@media screen and (min-width: 375px)
+img
+  max-width: 100% // La imagen se reducirá como máximo al ancho del contenedor
+  height: auto // La altura se ajustará automáticamente para mantener la proporción
+
+body
+  font-size: 16px // Ejemplo: ajustar el tamaño de fuente
+
+.container // Ejemplo: modificar el ancho del contenedor principal
+  width: 90%
+  margin: 0 auto

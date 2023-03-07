@@ -13,22 +13,16 @@ export class TranslateService {
   public getData() {
     return new Promise((resolve) => {
 
-      if (navigator.language === 'es' || navigator.language === 'es-419' || navigator.language === 'es-ES') {
+      console.log('Language: ', navigator.language);
 
-        // navigator.language obtiene el idioma del navegador para colocar los textos de acuerdo a las traducciones creadas
-        this.http.get('assets/translations/'+ 'es' +'.json').subscribe(data => {
-          this.data = data;
-          resolve(true);
-        })
-      }
-      else {
+      const acceptableLanguages = ['es', 'es-419', 'es-ES'];
+      const lang = acceptableLanguages.includes(navigator.language) ? navigator.language : 'en';
+      const langTwoChars = lang.substring(0, 2); // 'es'
 
-        // navigator.language obtiene el idioma del navegador para colocar los textos de acuerdo a las traducciones creadas
-        this.http.get('assets/translations/'+ 'en' +'.json').subscribe(data => {
-          this.data = data;
-          resolve(true);
-        })
-      }
+      this.http.get(`assets/translations/${langTwoChars}.json`).subscribe(data => {
+        this.data = data;
+        resolve(true);
+      });
 
     })
   }

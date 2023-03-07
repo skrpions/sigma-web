@@ -129,8 +129,7 @@ export class BodyComponent {
 
   // - Recuperar los campos para que no sea tan repetitiva el llamado a dichos campos cuando trabaje con los errores
   get departmentField() {
-    console.log('👉',  this.formGuest.get('department'));
-
+    //console.log('👉',  this.formGuest.get('department'));
     return this.formGuest.get('department');
   }
 

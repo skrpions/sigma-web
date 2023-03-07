@@ -8,7 +8,7 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-                    import('./routes/guest/guest.module').then((m) => m.GuestModule),
+                    import('./routes/routes.module').then((m) => m.RoutesModule),
       }
     ]
 

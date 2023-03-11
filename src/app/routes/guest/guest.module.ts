@@ -8,6 +8,8 @@ import { BodyComponent } from './components/body/body.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GuestRoutingModule } from './guest-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { FormComponent } from './components/form/form.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 // Fx para traducir los textos de los componentes
 export function translateFactory(provider: TranslateService){
@@ -19,7 +21,9 @@ export function translateFactory(provider: TranslateService){
         HomeComponent,
         HeaderComponent,
         BodyComponent,
-        TranslatePipe
+        TranslatePipe,
+        FormComponent,
+        FooterComponent
     ],
     imports: [
         CommonModule,

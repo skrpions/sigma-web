@@ -1,5 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { RoutesRoutingModule } from './routes-routing.module';
 
@@ -10,6 +11,7 @@ import { RoutesRoutingModule } from './routes-routing.module';
     CommonModule,
     RoutesRoutingModule,
     NgOptimizedImage,
+    RouterModule
   ],
   exports: [
   ]

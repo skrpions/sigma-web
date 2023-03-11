@@ -14,7 +14,7 @@ import { translateFactory } from './routes/guest/guest.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +23,7 @@ import { translateFactory } from './routes/guest/guest.module';
     NgbModule,
     MatButtonModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [// Provider para traducir los textos de los componentes
     TranslateService,

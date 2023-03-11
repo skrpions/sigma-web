@@ -63,8 +63,6 @@ export class FormComponent {
   private loadDepartments(allDepartments: any[]): void {
 
     allDepartments.map((department: any) => {
-      //console.log('👉 department: ', department);
-
       this.departments.push({
         Department: department[0],
         Cities: department[1]
@@ -78,6 +76,8 @@ export class FormComponent {
   public changeDepartment(department: any): void {
 
     department = department.target.value;
+    console.log('Dto: ', department);
+
 
     try {
       department === ''

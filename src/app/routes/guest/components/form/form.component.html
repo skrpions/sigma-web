@@ -1,10 +1,12 @@
+<!-- <pre>{{formGuest.value | json}}</pre> -->
+
 <form [formGroup]="formGuest" (ngSubmit)="send()" class="shadow form" novalidate>
 
   <!-- department -->
   <div class="mb-3">
     <label for="department" class="form-label"><strong>{{'label.department' | translate}}*</strong></label>
     <select formControlName="department" class="form-select" (change)="changeDepartment($event)">
-      <!-- <option selected>Departamento*</option> -->
+      <option selected value="">Seleccione</option>
       <option *ngFor="let department of departments">{{department.Department}}</option>
     </select>
     <div *ngIf="departmentField?.errors && departmentField?.touched">
@@ -14,12 +16,11 @@
     </div>
   </div>
 
-
   <!-- city -->
   <div class="mb-3">
     <label for="city" class="form-label">{{'label.city' | translate}}*</label>
     <select formControlName="city" class="form-select" id="city">
-      <option selected>Seleccione Ciudad</option>
+      <!-- <option selected>Seleccione</option> -->
       <option *ngFor="let city of cities">{{city}}</option>
     </select>
     <div *ngIf="cityField?.errors && cityField?.touched">
@@ -44,7 +45,6 @@
       </p>
     </span>
   </div>
-
 
   <!-- E-mail -->
   <div class="mb-3">

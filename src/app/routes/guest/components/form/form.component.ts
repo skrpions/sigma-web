@@ -49,9 +49,12 @@ export class FormComponent {
 
       // Consumo de API REST :: Obtengo los datos de la url
       this._departmentSvc.getDepartamentos().subscribe(Departments => {
-        //console.log('Departments:', Departments);
-        //console.log('✅ Object.entries(Departments) ', Object.entries(Departments));
+        console.log('👉 Departments:', Departments);
+        console.log('✅ Object.entries(Departments) ', Object.entries(Departments));
         this.loadDepartments(Object.entries(Departments));
+
+        // [0, 1]
+        // ['Amazonas', ['Leticia','El Encanto','La Chorrera']]
       });
 
     } catch (error) {
@@ -70,7 +73,7 @@ export class FormComponent {
 
     });
 
-    //console.log('😉 this.departments: ', this.departments);
+    console.log('😉 this.departments: ', this.departments);
   }
 
   public changeDepartment(department: any): void {
@@ -78,8 +81,19 @@ export class FormComponent {
     department = department.target.value;
     console.log('Dto: ', department);
 
+    if (department === '') {
+      this.formGuest.get('city')?.reset('');
+      this.cities = [];
+    } else {
+      try {
+        const selectedDepartment = this.departments.find(elemento => elemento.Department === department);
+        this.cities = selectedDepartment?.Cities ?? []; // Si selectedDepartment?.Cities es nulo o no definido , entonces el operador de fusión nula (??) asigna un valor predeterminado de un arreglo vacío [].
+      } catch (error) {
+        console.log('Error: ', error);
+      }
+    }
 
-    try {
+    /* try {
       department === ''
         ?
         (
@@ -90,7 +104,7 @@ export class FormComponent {
 
     } catch (error) {
       console.log('Error: ', error);
-    }
+    } */
   }
 
   public send(): void {

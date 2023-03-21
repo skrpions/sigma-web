@@ -10,7 +10,7 @@
       <option *ngFor="let department of departments">{{department.Department}}</option>
     </select>
     <div *ngIf="departmentField?.errors && departmentField?.touched">
-      <p *ngIf="departmentField?.hasError('required')">
+      <p>
         {{'label.required' | translate}} *
       </p>
     </div>
@@ -20,11 +20,10 @@
   <div class="mb-3">
     <label for="city" class="form-label">{{'label.city' | translate}}*</label>
     <select formControlName="city" class="form-select" id="city">
-      <!-- <option selected>Seleccione</option> -->
       <option *ngFor="let city of cities">{{city}}</option>
     </select>
     <div *ngIf="cityField?.errors && cityField?.touched">
-      <p *ngIf="cityField?.hasError('required')">
+      <p>
         {{'label.required' | translate}} *
       </p>
     </div>
@@ -36,10 +35,11 @@
     <input formControlName="name" type="text" class="form-control" id="name" placeholder="Pepito de Jesús">
     <!-- {{nameField.value.length}}/50 -->
     <span class="icon-left"><i class="fas fa-check-circle"></i></span>
-    <span class="msj" *ngIf="nameField?.errors && nameField?.touched">
+    <span *ngIf="nameField?.errors && nameField?.touched">
       <p *ngIf="nameField?.hasError('required')">
         {{'label.required' | translate}} *
       </p>
+
       <p *ngIf="nameField?.hasError('maxlength')">
         {{'label.maximum_limit' | translate}}
       </p>

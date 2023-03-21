@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Department } from '@core/models/department';
 import { Guest } from '@core/models/guest';
 import { DepartmentService } from '@core/services/department.service';
-import { TranslateService } from '@core/services/translate.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,11 +15,11 @@ export class FormComponent {
   departments: Department[] = [];
   cities: string[] = [];
   listGuest: Guest[] = [];
+  count: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
-    private _departmentSvc: DepartmentService,
-    private translate: TranslateService
+    private _departmentSvc: DepartmentService
   ) {
     this.buildForm();
   }
@@ -141,7 +140,6 @@ export class FormComponent {
 
   // - Recuperar los campos para que no sea tan repetitiva el llamado a dichos campos cuando trabaje con los errores
   get departmentField() {
-    //console.log('👉',  this.formGuest.get('department'));
     return this.formGuest.get('department');
   }
 

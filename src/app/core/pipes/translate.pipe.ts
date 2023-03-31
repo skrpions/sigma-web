@@ -6,10 +6,10 @@ import { TranslateService } from '../services/translate.service';
 })
 export class TranslatePipe implements PipeTransform {
 
-  constructor(private translateService: TranslateService){}
+  constructor(private translateSvc: TranslateService){}
 
   transform(value: any): any {
-    return this.translateService.getTranslate(value) ? this.translateService.getTranslate(value) : '';
+    return this.translateSvc.getTranslate(value) ? this.translateSvc.getTranslate(value) : '';
   }
 
 }

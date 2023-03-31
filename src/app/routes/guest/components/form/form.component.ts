@@ -65,10 +65,12 @@ export class FormComponent {
     try {
       department === ''
         ? (this.formGuest.get('city')?.reset(''), (this.cities = []))
-        : (this.cities =
+        : ((this.cities =
             this.departments.find(
               (elemento) => elemento.Department === department
-            )?.Cities ?? []);
+            )?.Cities ?? []),
+          // TODO: add the first city default
+          this.formGuest.patchValue({ city: this.cities[0] }));
     } catch (error) {
       console.log('Error: ', error);
     }

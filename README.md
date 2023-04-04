@@ -164,4 +164,4 @@ Then I must open a web browser (chrome, firefox) from any device and enter the i
 
 ---
 
-[Demo](https://skrpions.github.io/sigma-web/)
+[Demonstration](https://skrpions.github.io/sigma-web/)

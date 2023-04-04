@@ -14,6 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 4. [Commands](#commands)
 5. [Utils](#utils)
 6. [FAQs](#faqs)
+7. [Demo](#demo)
 
 ### General Info
 
@@ -158,3 +159,9 @@ $ ng s --host=0.0.0.0 --port=4200 -o
 ```
 
 Then I must open a web browser (chrome, firefox) from any device and enter the ip of the local network: for example: _192.168.0.106:4200_.
+
+## Demo
+
+---
+
+[Demo](https://skrpions.github.io/sigma-web/)

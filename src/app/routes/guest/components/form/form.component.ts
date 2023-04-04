@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Contact } from '@core/models/contact';
 import { Department } from '@core/models/department';
-import { Guest } from '@core/models/guest';
 import { ContactService } from '@core/services/contact.service';
 import { DepartmentService } from '@core/services/department.service';
 import Swal from 'sweetalert2';
@@ -15,7 +15,7 @@ export class FormComponent {
   formGuest!: FormGroup;
   departments: Department[] = [];
   cities: string[] = [];
-  listGuest: Guest[] = [];
+  listGuest: Contact[] = [];
   count: number = 0;
 
   constructor(
@@ -79,7 +79,7 @@ export class FormComponent {
   public send(): void {
     if (this.formGuest.invalid) return this.formGuest.markAllAsTouched(); // Activo todos los errores en el formGuest
 
-    const guest: Guest = this.formGuest.value;
+    const guest: Contact = this.formGuest.value;
     console.log('guest:', guest);
 
     this._contactSvc.create(guest).subscribe((response: any) => {
